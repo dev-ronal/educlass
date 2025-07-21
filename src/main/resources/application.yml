@@ -1,0 +1,31 @@
+# ======================== #
+# CONFIG GENERAL    #
+# ======================== #
+server:
+  port: 8080
+
+# ====================================== #
+# CONFIG DE BASE DE DATOS (MySQL) #
+# ====================================== #
+spring:
+  application:
+    name: educlass
+  datasource:
+    url: jdbc:mysql://localhost:3306/BD_EDUCLASS?useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: mysql
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jackson:
+    time-zone: America/Lima
+
+  # ======================
+  # CONFIG DE JPA / HIBERNATE
+  # ======================
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
