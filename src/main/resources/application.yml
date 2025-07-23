@@ -1,6 +1,6 @@
-# ======================== #
-# CONFIG GENERAL    #
-# ======================== #
+# ================= #
+#  CONFIG GENERAL   #
+# ================= #
 server:
   port: 8080
 
@@ -9,11 +9,11 @@ server:
 # ====================================== #
 spring:
   application:
-    name: educlass
+    name: ${NAME_APPLICATION}
   datasource:
-    url: jdbc:mysql://localhost:3306/BD_EDUCLASS?useSSL=false&allowPublicKeyRetrieval=true
-    username: root
-    password: mysql
+    url: ${URL_BD}
+    username: ${USERNAME_BD}
+    password: ${PASSWORD_BD}
     driver-class-name: com.mysql.cj.jdbc.Driver
   jackson:
     time-zone: America/Lima
@@ -29,3 +29,25 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.MySQL8Dialect
+
+  # ============== #
+  # CONFIG LOGGING #
+  # ============== #
+logging:
+  level:                      # Niveles de log por paquete o clase
+    root: INFO                # Nivel por defecto para toda la app (INFO, DEBUG, WARN, ERROR, TRACE)
+    com.ronal: DEBUG          # Nivel específico para tu paquete base (puedes cambiarlo por el tuyo)
+    org.springframework.web: INFO  # Nivel para la capa web de Spring
+    org.hibernate.SQL: DEBUG       # Muestra las consultas SQL ejecutadas por Hibernate
+    org.hibernate.type.descriptor.sql.BasicBinder: TRACE  # Muestra los parámetros ligados a las consultas SQL
+  file:
+    name: logs/educlass.log   # Ruta y nombre del archivo donde se guardarán los logs
+  # %d → fecha
+  # %thread → nombre del hilo que ejecuta
+  # %-5level → nivel de log (INFO, ERROR, etc., con 5 espacios)
+  # %logger{36} → nombre corto del logger (hasta 36 caracteres)
+  # %msg%n → el mensaje del log seguido de un salto de línea
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Formato de los logs en consola
+    file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"  # Formato de los logs en el archivo:
+
