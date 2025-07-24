@@ -1,17 +1,15 @@
 package com.ronal.educlass.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import java.time.LocalDate;
-
-@Setter
-@Getter
+@Builder
 @Entity
 @Table(name = "tb_alumno")
-@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Data
 public class Alumno {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

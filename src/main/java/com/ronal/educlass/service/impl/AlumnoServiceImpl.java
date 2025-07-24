@@ -32,7 +32,7 @@ public class AlumnoServiceImpl implements IAlumnoService {
         String correoAlumno = AlumnoUtils.generarCorreoAlumno(codAlumno);
 
         alumno.setCodigo(codAlumno);
-        alumno.setCodigo(correoAlumno);
+        alumno.setCorreo(correoAlumno);
         return this.alumnoRepository.save(alumno);
     }
 
