@@ -37,7 +37,7 @@ public class AlumnoController {
     }
 
     @PostMapping("/crear")
-    public ResponseEntity<Alumno> crearAlumno(@RequestBody Alumno alumno) throws JRException, IOException {
+    public ResponseEntity<Alumno> crearAlumno(@RequestBody Alumno alumno){
         Alumno alumnoCreado = this.alumnoService.crearAlumno(alumno);
         String respuesta = reportAlumnoService.reporteAlumnos(alumnoCreado);
         log.info(respuesta);
