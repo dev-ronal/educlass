@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import javax.crypto.SecretKey;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Map;
 import java.util.function.Function;
 
 @Service
@@ -21,7 +22,7 @@ import java.util.function.Function;
 public class JwtTokenServiceImpl implements IJwtService {
 
     @Value("${jwt.secret.key}")
-    private final String SECRET_KEY;
+    private String SECRET_KEY;
 
     /* ===== Generar Token ===== */
     @Override
@@ -29,7 +30,7 @@ public class JwtTokenServiceImpl implements IJwtService {
         return generarToken(new HashMap<>(), usuario);
     }
 
-    public String generarToken(HashMap<String, Object> extraClaims, Usuario usuario) {
+    public String generarToken(Map<String, Object> extraClaims, Usuario usuario) {
         return Jwts.builder()
                 .claims(extraClaims)
                 .subject(usuario.getUsername())

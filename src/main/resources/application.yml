@@ -54,4 +54,4 @@ logging:
 
 jwt:
   secret:
-    key: JMx3f8TLwNvDI/dzh/Qjd5pBaCJ6jB4+UypoXVR5V4+/JaGIh54j4F36e5zoVMKE
+    key: ${JWT_SECRET_KEY}
