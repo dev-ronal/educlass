@@ -7,20 +7,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tb_alumno")
+@Table(name = "tb_permiso")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @Builder
-public class Alumno {
+public class Permiso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idAlumno;
-    private String correo;
-    private String telefono;
+    private Long idPermiso;
+    private String nombre;
     private String codigo;
-
-    @OneToOne
-    @JoinColumn(name = "idUsuario")
-    Usuario usuario;
+    private String descripcion;
 }

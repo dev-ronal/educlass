@@ -23,6 +23,12 @@ public class AlumnoServiceImpl implements IAlumnoService {
 
     @Override
     public Alumno crearAlumno(Alumno alumno) {
+
+
+
+
+
+        /*
         Optional<Alumno> alumnoExistente = this.alumnoRepository.findByDni(alumno.getDni());
         if (alumnoExistente.isPresent()) {
             throw new BusinessException("ALUMNO_EXISTE", HttpStatus.INTERNAL_SERVER_ERROR,
@@ -34,6 +40,9 @@ public class AlumnoServiceImpl implements IAlumnoService {
         alumno.setCodigo(codAlumno);
         alumno.setCorreo(correoAlumno);
         return this.alumnoRepository.save(alumno);
+
+         */
+        return null;
     }
 
     @Override
@@ -53,6 +62,7 @@ public class AlumnoServiceImpl implements IAlumnoService {
 
     @Override
     public Alumno actualizarAlumno(Alumno alumno) {
+        /*
         Alumno alumnoEncontrado = this.buscarAlumnoPorId(alumno.getId());
         Alumno alumnoActualizado = null;
         if (alumnoEncontrado != null) {
@@ -71,6 +81,10 @@ public class AlumnoServiceImpl implements IAlumnoService {
         }
         throw new BusinessException("ALUMNO_NO_ENCONTRADO", HttpStatus.NOT_FOUND,
                 "El alumno que desea actualizar no existe en el sistema");
+
+         */
+
+        return null;
     }
 
     @Override

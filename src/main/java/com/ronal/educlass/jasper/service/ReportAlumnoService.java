@@ -21,7 +21,9 @@ public class ReportAlumnoService {
 
     public String reporteAlumnos(Alumno alumno) {
 
-        AlumnoPdf bean = AlumnoPdf.builder()
+        AlumnoPdf bean = new AlumnoPdf();
+
+                /*AlumnoPdf.builder()
                 .nombre(obtenerValorSeguro(alumno.getNombre()))
                 .apellido1(obtenerValorSeguro(alumno.getApellido1()))
                 .apellido2(obtenerValorSeguro(alumno.getApellido2()))
@@ -31,6 +33,8 @@ public class ReportAlumnoService {
                 .telefono(obtenerValorSeguro(alumno.getTelefono()))
                 .correo(obtenerValorSeguro(alumno.getCorreo()))
                 .build();
+                */
+
         return Base64.getEncoder().encodeToString(generarPdfBytes(bean));
     }
 

@@ -51,3 +51,7 @@ logging:
     console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n" # Formato de los logs en consola
     file: "%d{yyyy-MM-dd HH:mm:ss} %-5level [%thread] %logger{36} - %msg%n"  # Formato de los logs en el archivo:
 
+
+jwt:
+  secret:
+    key: JMx3f8TLwNvDI/dzh/Qjd5pBaCJ6jB4+UypoXVR5V4+/JaGIh54j4F36e5zoVMKE

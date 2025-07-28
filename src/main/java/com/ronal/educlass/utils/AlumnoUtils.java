@@ -17,7 +17,7 @@ public class AlumnoUtils {
         Random random = new Random();
 
         int anio = fechaActual.getYear();
-        int mesCumpleanio = alumno.getFechaDeNacimiento().getMonthValue();
+        int mesCumpleanio = 1;/*alumno.getFechaDeNacimiento().getMonthValue();*/
         int numAleatorio = random.nextInt(100);
         String prefix = "AL";
 

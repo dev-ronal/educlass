@@ -39,11 +39,14 @@ public class ProfesorServiceImpl implements IProfesorService {
 
     @Override
     public Profesor actualizarProfesor(Long id, Profesor actualizado) {
+        /*
         Profesor profesor = profesorRepo.findById(id)
                 .orElseThrow(() -> new RuntimeException("Profesor no encontrado"));
         profesor.setNombre(actualizado.getNombre());
         profesor.setCorreo(actualizado.getCorreo());
-        return profesorRepo.save(profesor);
+        */
+
+        return profesorRepo.save(null);
     }
 
     @Override
@@ -53,11 +56,14 @@ public class ProfesorServiceImpl implements IProfesorService {
 
     @Override
     public Profesor asignarClase(Long profesorId, Long claseId) {
+        /*
         Profesor profesor = profesorRepo.findById(profesorId)
                 .orElseThrow(() -> new RuntimeException("Profesor no encontrado"));
         Clase clase = claseRepo.findById(claseId)
                 .orElseThrow(() -> new RuntimeException("Clase no encontrada"));
         profesor.getClases().add(clase);
-        return profesorRepo.save(profesor);
+
+         */
+        return profesorRepo.save(null);
     }
 }
