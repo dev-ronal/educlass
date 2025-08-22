@@ -4,11 +4,9 @@ import com.ronal.educlass.entity.Alumno;
 import com.ronal.educlass.jasper.service.ReportAlumnoService;
 import com.ronal.educlass.service.IAlumnoService;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.jasperreports.engine.JRException;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -37,7 +35,7 @@ public class AlumnoController {
     }
 
     @PostMapping("/crear")
-    public ResponseEntity<Alumno> crearAlumno(@RequestBody Alumno alumno){
+    public ResponseEntity<Alumno> crearAlumno(@RequestBody Alumno alumno) {
         Alumno alumnoCreado = this.alumnoService.crearAlumno(alumno);
         String respuesta = reportAlumnoService.reporteAlumnos(alumnoCreado);
         log.info(respuesta);
